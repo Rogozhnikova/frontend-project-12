@@ -1,9 +1,11 @@
-install:
-	npm install
+install: 
+	npm i
 
-start:
-	npm start
+dev: 
+	npm run dev
 
 build:
-	rm -rf frontend/dist
-	npm run build --prefix frontend
+	npm run build
+
+lint:
+	npx eslint --ext js,jsx --no-eslintrc --config .eslintrc.yml .

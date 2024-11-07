@@ -1,17 +1,9 @@
 install:
-	npm ci
+	npm install
 
 start:
 	npm start
 
 build:
-	npm build
-
-test:
-	npm test
-
-eject:
-	npm eject
-
-lint:
-	npx eslint --ext js,jsx --no-eslintrc --config .eslintrc.yml .
+	rm -rf frontend/dist
+	npm run build --prefix frontend

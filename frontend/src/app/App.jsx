@@ -5,7 +5,7 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
 import leoProfanity from 'leo-profanity';
 import i18n from 'i18next';
-
+import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import store from '../redux/store';
 import router from './routes/Router';

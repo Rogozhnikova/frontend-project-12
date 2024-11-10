@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ROUTES from '../../app/routes/routes.data';
 import NotFoundImg from '../../shared/assets/images/notfound.svg';
+import React from 'react';
 
 const NotFound = () => {
   const { t } = useTranslation();

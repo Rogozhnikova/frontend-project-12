@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import React from 'react';
 
 const MessageInput = ({ input, setInput, handleSendMessage }) => {
   const { t } = useTranslation();

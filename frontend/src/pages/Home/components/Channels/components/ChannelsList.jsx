@@ -1,4 +1,5 @@
 import Channel from './Channel';
+import React from 'react';
 
 const ChannelsList = ({
   channelsList, activeChannelId, handleClickChannel, handleShowModal,

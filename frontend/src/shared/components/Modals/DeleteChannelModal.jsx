@@ -4,6 +4,7 @@ import { useGetMessagesQuery, useRemoveMessageMutation } from '../../../redux/se
 import { useRemoveChannelMutation } from '../../../redux/services/channelsApi';
 import useModal from '../../hooks/useModal';
 import ModalForm from './ModalForm';
+import React from 'react';
 
 const DeleteChannelModal = ({ isShow }) => {
   const { handleCloseModal, modalProps } = useModal();

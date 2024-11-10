@@ -6,6 +6,7 @@ import { USER } from '../../../../shared/constants';
 import socket from './sockets/socket';
 import { MessageInput, MessageList } from './components';
 import handleSendMessage from './utils/handleSendMessage';
+import React from 'react';
 
 const Chat = ({ messages, refetchMessage }) => {
   const { t } = useTranslation();

@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import io from 'socket.io-client';
-
+import React from 'react';
 import { setActiveChannel } from '../../../../redux/slices/channelsSlice';
-
 import { AddChannelButton, ChannelsList } from './components';
 import useSocketListeners from './hooks/useSocketListeners';
 

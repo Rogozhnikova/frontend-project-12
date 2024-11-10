@@ -4,9 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Channels, Chat } from './components';
 import { useGetMessagesQuery } from '../../redux/services/messagesApi';
 import { useGetChannelsQuery } from '../../redux/services/channelsApi';
-
+import React from 'react';
 import getModal from '../../shared/components/Modals/index.js';
-
 import useSocket from './useSocket.js';
 import useModal from '../../shared/hooks/useModal.js';
 import useLogout from '../../shared/hooks/useLogout.js';

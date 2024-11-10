@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import useLogout from '../shared/hooks/useLogout';
 import useAuth from '../shared/hooks/useAuth';
 import ROUTES from '../app/routes/routes.data';
+import React from 'react';
 
 const Layout = () => {
   const { isAuth } = useAuth();

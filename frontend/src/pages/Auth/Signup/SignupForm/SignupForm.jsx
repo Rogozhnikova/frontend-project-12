@@ -7,6 +7,7 @@ import { useSignupMutation } from '../../../../redux/services/authApi';
 import { FormError, InputField } from './components';
 import handleSubmit from './utils/handleSubmit';
 import useValidationSchemas from '../../../../shared/hooks/useValidationSchemas';
+import React from 'react';
 
 const SignupForm = () => {
   const [signup] = useSignupMutation();

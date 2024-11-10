@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ROUTES from './routes.data';
-
+import React from 'react';
 import {
   Home, Login, NotFound, Signup,
 } from '../../pages';

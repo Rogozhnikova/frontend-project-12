@@ -1,4 +1,5 @@
 import useModal from '../../../../../shared/hooks/useModal';
+import React from 'react';
 
 const AddChannelButton = () => {
   const { handleOpenModal } = useModal();

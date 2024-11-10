@@ -2,7 +2,7 @@ import { Form } from 'react-bootstrap';
 import { Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
-
+import React from 'react';
 import { toast } from 'react-toastify';
 
 import { useAddChannelMutation, useGetChannelsQuery } from '../../../redux/services/channelsApi';

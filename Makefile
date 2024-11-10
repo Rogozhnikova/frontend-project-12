@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	start-server -s ./frontend/dist
+	npm start
 
 build:
 	rm -rf frontend/dist

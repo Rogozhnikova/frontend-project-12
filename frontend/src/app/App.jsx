@@ -12,7 +12,7 @@ import router from './routes/Router';
 import resources from './locales';
 
 const rollbarConfig = {
-  accessToken: '7679e4da01824fbda1aaf72550f64fc9',
+  accessToken: 'b1951860a77945ad9ebe4ac338a15715',
   environment: 'testenv',
 };
 

@@ -20,23 +20,16 @@ const useSocketListeners = (socket, refetchChannels) => {
     const events = ['newChannel', 'removeChannel', 'renameChannel'];
 
     events.forEach((event) => {
-      if (event === 'removeChannel') {
-        socket.on(event, handleRemoveChannel);
-      } else {
-        socket.on(event, refetchChannels);
-      }
-    });
-
-    return () => {
+      const handler = event === 'removeChannel' ? handleRemoveChannel : refetchChannels;
+      socket.on(event, handler);
+  });
+  
+  return () => {
       events.forEach((event) => {
-        if (event === 'removeChannel') {
-          socket.off(event, handleRemoveChannel);
-        } else {
-          socket.off(event, refetchChannels);
-        }
+          const handler = event === 'removeChannel' ? handleRemoveChannel : refetchChannels;
+          socket.off(event, handler);
       });
     };
   }, [socket, refetchChannels, activeChannelId, dispatch]);
-};
-
+}
 export default useSocketListeners;

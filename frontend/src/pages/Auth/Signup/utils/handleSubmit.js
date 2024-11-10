@@ -14,24 +14,32 @@ const handleSubmit = async (
   setError('');
   try {
     const response = await signup({ username, password });
-    if (response.error) {
-      throw new Error('Conflict');
-    }
-    const { data } = response;
-    if (data) {
-      const user = JSON.stringify(data);
-      localStorage.setItem(USER, user);
-      dispatch(setUser(data));
-      navigate(ROUTES.HOME);
-    }
+    handleResponse(response, dispatch, navigate, setError, t);
   } catch (error) {
-    if (error.message === 'Conflict') {
-      setError(t('userExist'));
-    } else {
-      setError(t('signUpError'));
-    }
+    handleError(error, setError, t);
   } finally {
     setSubmitting(false);
+  }
+};
+
+const handleResponse = (response, dispatch, navigate, setError, t) => {
+  if (response.error) {
+    throw new Error('Conflict');
+  }
+  const { data } = response;
+  if (data) {
+    const user = JSON.stringify(data);
+    localStorage.setItem(USER, user);
+    dispatch(setUser(data));
+    navigate(ROUTES.HOME);
+  }
+};
+
+const handleError = (error, setError, t) => {
+  if (error.message === 'Conflict') {
+    setError(t('userExist'));
+  } else {
+    setError(t('signUpError'));
   }
 };
 

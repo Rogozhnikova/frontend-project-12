@@ -15,7 +15,7 @@ const Home = () => {
   const logout = useLogout();
 
   useSocket();
-
+  
   const { isShow, modalType, modalProps } = useModal();
 
   const {
@@ -24,6 +24,7 @@ const Home = () => {
     isLoading: channelsLoading,
     error: channelsError,
   } = useGetChannelsQuery();
+
   const {
     data: messages = [],
     refetch: refetchMessage,
@@ -32,18 +33,13 @@ const Home = () => {
   } = useGetMessagesQuery();
 
   useEffect(() => {
-    if (channelsError || messagesError) {
-      if (channelsError?.status === 401 || messagesError?.status === 401) {
-        logout();
-      }
+    if ((channelsError && channelsError.status === 401) || (messagesError && messagesError.status === 401)) {
+      logout();
     }
   }, [channelsError, messagesError, logout]);
 
   const renderModal = () => {
-    if (!modalType) {
-      return null;
-    }
-
+    if (!modalType) return null;
     const ModalComponent = getModal(modalType);
     return ModalComponent ? <ModalComponent isShow={isShow} modalProps={modalProps} /> : null;
   };
@@ -52,10 +48,7 @@ const Home = () => {
     return (
       <div className="h-100 col-12 d-flex align-items-center justify-content-center">
         <Spinner animation="border" role="status">
-          <span className="visually-hidden">
-            {t('loading')}
-            ...
-          </span>
+          <span className="visually-hidden">{t('loading')}...</span>
         </Spinner>
       </div>
     );

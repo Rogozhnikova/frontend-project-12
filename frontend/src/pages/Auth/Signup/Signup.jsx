@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import SignupForm from './SignupForm';
-import SignupImg from '../../../shared/assets/images/signup.png';
+import SignupImg from '../../../shared/assets/images/registration.png';
 
 const Signup = () => {
   const { t } = useTranslation();

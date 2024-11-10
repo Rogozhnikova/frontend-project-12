@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useEffect } from 'react';
 import { setActiveChannel } from '../../../../../redux/slices/channelsSlice';
 

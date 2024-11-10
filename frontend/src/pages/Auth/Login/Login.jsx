@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LoginForm from './LoginForm/LoginForm';
-import LoginImg from '../../../shared/assets/images/cat.png';
+import LoginImg from '../../../shared/assets/images/avatar.jpg';
 import ROUTES from '../../../app/routes/routes.data';
 
 const Login = () => {

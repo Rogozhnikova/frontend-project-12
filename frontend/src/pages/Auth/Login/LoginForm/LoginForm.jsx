@@ -56,7 +56,6 @@ const LoginForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
       validateOnChange={false} // Отключаем валидацию при изменении
-      validateOnBlur={false} // Отключаем валидацию при потере фокуса
     >
       {({ isSubmitting }) => (
         <Form className="col-12 col-md-6 mt-3 mt-md-0">

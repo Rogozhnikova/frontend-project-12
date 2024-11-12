@@ -21,10 +21,8 @@ const LoginForm = () => {
 
   useEffect(() => {
     // Устанавливаем фокус на поле username при монтировании компонента
-    if (usernameRef.current) {
-      usernameRef.current.focus();
-    }
-  }, []);
+      login.current.focus();
+    }, []);
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {

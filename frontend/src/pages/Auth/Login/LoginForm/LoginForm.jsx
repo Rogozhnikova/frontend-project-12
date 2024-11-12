@@ -19,6 +19,13 @@ const LoginForm = () => {
   const validationSchemas = useValidationSchemas();
   const validationSchema = validationSchemas.login;
 
+  useEffect(() => {
+    // Устанавливаем фокус на поле username при монтировании компонента
+    if (usernameRef.current) {
+      usernameRef.current.focus();
+    }
+  }, []);
+
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const result = await login(values).unwrap();
@@ -48,12 +55,15 @@ const LoginForm = () => {
       initialValues={{ username: '', password: '' }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      validateOnChange={false} // Отключаем валидацию при изменении
+      validateOnBlur={false} // Отключаем валидацию при потере фокуса
     >
       {({ isSubmitting }) => (
         <Form className="col-12 col-md-6 mt-3 mt-md-0">
           <h1 className="text-center mb-4">{t('login')}</h1>
           <div className="form-floating mb-3">
             <Field
+              innerRef={usernameRef}
               name="username"
               autoComplete="username"
               required

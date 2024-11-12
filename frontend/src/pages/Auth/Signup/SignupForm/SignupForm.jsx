@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSignupMutation } from '../../../../redux/services/authApi';
 import { FormError, InputField } from './components';
-import handleSubmit from './utils/handleSubmit';
+import handleSubmit from '../utils/handleSubmit';
 import useValidationSchemas from '../../../../shared/hooks/useValidationSchemas';
 import React from 'react';
 

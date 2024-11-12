@@ -4,7 +4,7 @@ import React from 'react';
 import {
   Home, Login, NotFound, Signup,
 } from '../../pages';
-import { Layout, PrivateOutlet } from '../../layouts';
+import { Layout, PrivateOutlet } from '../../layout';
 
 const router = createBrowserRouter([
   {

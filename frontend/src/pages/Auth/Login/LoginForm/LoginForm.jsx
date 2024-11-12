@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
@@ -15,14 +15,16 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [loginError, setLoginError] = useState('');
+  const usernameRef = useRef();
 
   const validationSchemas = useValidationSchemas();
   const validationSchema = validationSchemas.login;
 
   useEffect(() => {
-    // Устанавливаем фокус на поле username при монтировании компонента
-      login.current.focus();
-    }, []);
+  if (usernameRef.current) {
+    usernameRef.current.focus();
+  }
+}, []);
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
